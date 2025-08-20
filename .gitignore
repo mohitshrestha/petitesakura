@@ -213,7 +213,9 @@ credentials/
 backend/app/credentials/
 
 # Ignore Google API token and credentials files
-backend/app/credentials/google/google-client-secret.json
-backend/app/credentials/google/service-account.json
-backend/app/credentials/google/token.json
+backend/app/credentials/google/credentials-google-client-secret.json
+backend/app/credentials/google/credentials-google-service-account.json
+backend/app/credentials/google/authorized-google-user-token.json
+authorized-google-user-token.json
+local-authorized-google-user-token.json
 token.json

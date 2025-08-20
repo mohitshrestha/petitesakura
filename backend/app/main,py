@@ -1,0 +1,11 @@
+from fastapi import FastAPI
+from backend.app.api_clients.google_api import GoogleAPIClient
+
+app = FastAPI()
+
+@app.get("/google/drive/files")
+async def get_google_drive_files():
+    """Endpoint to get list of files from Google Drive."""
+    google_client = GoogleAPIClient("drive")
+    files = google_client.list_drive_files()
+    return {"files": files}

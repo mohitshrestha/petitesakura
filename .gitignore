@@ -205,3 +205,15 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Ignore sensitive data files
+.env
+.env.local
+credentials/
+backend/app/credentials/
+
+# Ignore Google API token and credentials files
+backend/app/credentials/google/google-client-secret.json
+backend/app/credentials/google/service-account.json
+backend/app/credentials/google/token.json
+token.json

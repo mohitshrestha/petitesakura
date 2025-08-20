@@ -1,0 +1,19 @@
+# List of Python library
+python-dotenv # For loading environment variables from a .env file locally.
+
+# Google client library
+google-api-python-client
+google-auth
+google-auth-httplib2
+google-auth-oauthlib
+gspread
+
+httpx # For HTTPX support
+rich # for pretty printing in terminal or python console
+
+# For FastAPI
+fastapi
+uvicorn 
+
+# LLMs library
+openai # For interacting with the OpenAI API.

@@ -2,7 +2,7 @@ import sys
 import os
 
 # Add the 'backend' directory to the sys.path so it can be imported
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..')))
 
 import json
 from backend.app.api_clients.google_api import GoogleAPIClient

@@ -11,9 +11,13 @@ gspread
 httpx # For HTTPX support
 rich # for pretty printing in terminal or python console
 
+# To run tests
+pytest
+
 # For FastAPI
 fastapi
 uvicorn 
 
 # LLMs library
 openai # For interacting with the OpenAI API.
+

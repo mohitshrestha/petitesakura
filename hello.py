@@ -1,5 +1,5 @@
 def main():
-    print("Hello from petitesakura!")
+    print("Hello from Mohit Shrestha's python-project-template!")
 
 
 if __name__ == "__main__":

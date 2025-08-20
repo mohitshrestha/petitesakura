@@ -1,22 +1,31 @@
-# PetiteSakura - Automation Project
+# Python Project Template
 
-**PetiteSakura** is a Python-based automation project designed to interact with external APIs like **Google APIs**, **OpenAI**, and more. The project leverages **FastAPI** for the backend, ensures secure handling of credentials, and integrates modern best practices for deployment and continuous integration (CI/CD). It also includes **data science**, **machine learning**, and **AI** workflows.
+This is a generic Python-based project template designed to serve as a starting point for various types of Python projects, including backend APIs, data science, machine learning, and AI workflows. It leverages **FastAPI** for building APIs and integrates modern best practices for deployment, testing, and continuous integration (CI/CD). The template supports secure handling of credentials, environment variable management, and Docker containerization. The project uses **UV**, a fast and efficient Python package manager written in Rust, to manage dependencies and virtual environments.
 
 ## Key Features
 
--   **OAuth & Service Account Authentication**: Secure management of credentials using OAuth or Service Account tokens.
--   **API Integrations**: Integrates with **Google APIs** (Drive, Sheets, Docs, etc.) and **OpenAI**.
--   **FastAPI Backend**: REST API for various automation tasks.
--   **CI/CD Setup**: GitHub Actions for continuous integration and deployment.
--   **Environment Management**: Uses `.env`, `.env.local`, and `.env.sample` for secure configuration.
--   **Data Science & AI Workflows**: Supports data analytics, machine learning, and AI-based tasks.
+- **Modular Architecture**: Organized for scalability, with separate sections for backend, frontend (if needed), data science, and AI workflows.
+- **Backend API**: Built with **FastAPI** for fast and secure API development.
+- **Docker Support**: Contains Docker configuration to run the project in containers.
+- **UV Dependency Management**: Managed by **UV**, a Python package manager written in Rust. The project uses `uv.lock` and `pyproject.toml` for deterministic dependency management.
+- **Environment Management**: Uses `.env`, `.env.local`, and `.env.sample` for secure configuration.
+- **CI/CD Setup**: Ready-to-use configuration for CI/CD pipelines (e.g., GitHub Actions).
+- **Data Science & AI Workflows**: Supports integration with various data processing, machine learning, and AI tasks.
+
+## Getting Started with **UV**
+
+**UV** is a fast and efficient Python package manager written in **Rust**, designed to simplify dependency management, virtual environments, and project workflows.
+
+To get started with **UV** and learn how to initialize your project, manage dependencies, and use **UV** in your workflow, please refer to the dedicated **UV Setup Guide**.
+
+- [**UV Setup and Usage Guide**](UV_SETUP_AND_USAGE_GUIDE.md) - In-depth instructions on setting up and using **UV** in your Python project.
 
 ## Folder Structure
 
 Here’s an overview of the project structure, which is organized for scalability, security, and collaboration. New contributors should follow this structure for clarity and consistency:
 
 ``` bash
-petitesakura/
+python-project-template/
 ├── backend/                        # Backend (FastAPI or other backend)
 │   ├── app/                          # FastAPI application source code
 │   │   ├── __init__.py              # Initializes the application module
@@ -69,7 +78,15 @@ petitesakura/
 ├── .gitignore                       # Git ignore file
 ├── LICENSE                          # License for the project
 ├── README.md                        # Project documentation
-└── requirements.txt                 # Root-level dependencies for the entire project
+├── requirements.txt                 # Root-level dependencies for the entire project
+├── UV_SETUP_AND_USAGE_GUIDE.md      # Detailed UV Setup and Usage Guide
+├── pyproject.toml                   # Project configuration (UV, Poetry, etc.)
+├── python-version                   # Python version manager file (e.g., pyenv)
+├── uv.lock                          # Lock file for UV dependencies
+├── hello.py                         # Example script (could be a sample script to test project setup)
+├── .venv/                           # Virtual environment folder
+├── .env                             # Environment file (for sensitive config values)
+└── ...                              # Other files
 ```
 
 Folder and File Breakdown:
@@ -99,8 +116,8 @@ Folder and File Breakdown:
 ### 1. Clone the repository
 
 ``` bash
-git clone https://github.com/mohitshrestha/petitesakura.git
-cd petitesakura
+git clone https://github.com/your-username/python-project-template.git
+cd python-project-template
 ```
 
 ### 2. Install dependencies
@@ -153,13 +170,13 @@ Visit the backend API at `http://localhost:8000`.
 1.  Build the Docker image:
 
 ``` bash
-docker build -t petitesakura .
+docker build -t python-project-template .
 ```
 
 2.  Run the Docker container:
 
 ``` bash
-docker run -p 8000:8000 petitesakura
+docker run -p 8000:8000 python-project-template
 ```
 
 -   Alternatively, run the backend using Docker Compose:
@@ -221,6 +238,19 @@ pytest data_science/tests/
 
 Ensure your environment variables are properly set before running the tests, especially those related to external APIs (like Google APIs and OpenAI).
 
+## Example Script
+
+To verify that everything is set up, you can run the hello.py script to test if your environment is working:
+``` bash
+python hello.py
+```
+
+Or 
+
+``` bash
+uv run hello.py
+```
+
 ## Contributing
 
 We follow the following standards for collaborative development:
@@ -246,3 +276,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 -   **Security**: Never hard-code sensitive information (e.g., API keys) directly into the codebase. Use environment variables or secure secrets management tools like `dotenv` or `HashiCorp Vault`.
 
 -   **Token Management**: Ensure OAuth tokens (`token.json`) and service account credentials are securely stored and are protected from unauthorized access.
+
+- **Dependency Management**: UV ensures reproducibility with `uv.lock`. Avoid directly modifying this file to ensure consistency across environments.
